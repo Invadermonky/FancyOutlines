@@ -7,6 +7,12 @@ That's it.
 
 ---
 
+## Credits
+
+[Thermonuclear_minecraft_engineer](https://www.curseforge.com/members/thermonuclear_minecraft_engineer/projects) - Original idea and CurseForge icon
+
+---
+
 ## FAQ
 **Q:** How do I set it up?<br>
 **A:** Read the config.
