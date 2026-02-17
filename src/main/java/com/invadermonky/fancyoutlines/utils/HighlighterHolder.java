@@ -1,6 +1,6 @@
-package com.invadermonky.blockhighlighter.utils;
+package com.invadermonky.fancyoutlines.utils;
 
-import com.invadermonky.blockhighlighter.config.ConfigHandlerBH;
+import com.invadermonky.fancyoutlines.config.ConfigHandlerBH;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 

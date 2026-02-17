@@ -1,13 +1,13 @@
-package com.invadermonky.blockhighlighter.config;
+package com.invadermonky.fancyoutlines.config;
 
-import com.invadermonky.blockhighlighter.BlockHighlighter;
+import com.invadermonky.fancyoutlines.FancyOutlines;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Config(modid = BlockHighlighter.MOD_ID)
+@Config(modid = FancyOutlines.MOD_ID)
 public class ConfigHandlerBH {
     @Config.RangeInt(min = 0x0, max = 0xffffff)
     @Config.Name("Global Highlight Color")
@@ -34,12 +34,12 @@ public class ConfigHandlerBH {
     })
     public static String[] highlightOverrides = new String[] {};
 
-    @Mod.EventBusSubscriber(modid = BlockHighlighter.MOD_ID)
+    @Mod.EventBusSubscriber(modid = FancyOutlines.MOD_ID)
     public static class ConfigChangeListener {
         @SubscribeEvent
         public static void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-            if(event.getModID().equals(BlockHighlighter.MOD_ID)) {
-                ConfigManager.sync(BlockHighlighter.MOD_ID, Config.Type.INSTANCE);
+            if(event.getModID().equals(FancyOutlines.MOD_ID)) {
+                ConfigManager.sync(FancyOutlines.MOD_ID, Config.Type.INSTANCE);
                 ConfigTags.syncConfig();
             }
         }

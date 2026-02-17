@@ -1,7 +1,7 @@
-package com.invadermonky.blockhighlighter.config;
+package com.invadermonky.fancyoutlines.config;
 
-import com.invadermonky.blockhighlighter.BlockHighlighter;
-import com.invadermonky.blockhighlighter.utils.HighlighterHolder;
+import com.invadermonky.fancyoutlines.FancyOutlines;
+import com.invadermonky.fancyoutlines.utils.HighlighterHolder;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -50,9 +50,9 @@ public class ConfigTags {
                     throw new IllegalArgumentException("Invalid configuration string: " + str);
                 }
             } catch (IllegalArgumentException e) {
-                BlockHighlighter.LOGGER.error(e.getMessage());
+                FancyOutlines.LOGGER.error(e.getMessage());
             } catch (Exception e) {
-                BlockHighlighter.LOGGER.error("An error occurred while parsing Block Highlighter's configuration.", e);
+                FancyOutlines.LOGGER.error("An error occurred while parsing Fancy Outlines' configuration.", e);
             }
         }
     }

@@ -1,7 +1,7 @@
-# Block Highlighter
+# Fancy Outlines
 [![Requires MixinBooter](https://img.shields.io/badge/Requires-MixinBooter-3498db.svg?labelColor=34495e&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)
 
-It's a mod that lets you change the mouseover block highlight color and line width on a global or per-block basis. 
+It's a mod that lets you change the mouseover block highlight color, alpha, and line width on a global or per-block basis. 
 
 That's it.
 

@@ -1,4 +1,4 @@
-package com.invadermonky.blockhighlighter.core;
+package com.invadermonky.fancyoutlines.core;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
@@ -9,12 +9,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-@IFMLLoadingPlugin.Name("BlockHighlighterCore")
+@IFMLLoadingPlugin.Name("FancyOutlinesCore")
 @IFMLLoadingPlugin.MCVersion(MinecraftForge.MC_VERSION)
-public class BlockHighlighterPlugin implements IEarlyMixinLoader, IFMLLoadingPlugin {
+public class FancyOutlinesPlugin implements IEarlyMixinLoader, IFMLLoadingPlugin {
     @Override
     public List<String> getMixinConfigs() {
-        return Collections.singletonList("mixins.blockhighlighter.json");
+        return Collections.singletonList("mixins.fancyoutlines.json");
     }
 
     @Override

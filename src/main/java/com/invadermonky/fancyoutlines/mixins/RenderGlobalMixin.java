@@ -1,7 +1,7 @@
-package com.invadermonky.blockhighlighter.mixins;
+package com.invadermonky.fancyoutlines.mixins;
 
-import com.invadermonky.blockhighlighter.config.ConfigTags;
-import com.invadermonky.blockhighlighter.utils.HighlighterHolder;
+import com.invadermonky.fancyoutlines.config.ConfigTags;
+import com.invadermonky.fancyoutlines.utils.HighlighterHolder;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.multiplayer.WorldClient;

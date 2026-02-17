@@ -1,0 +1,13 @@
+{
+	"package": "com.invadermonky.fancyoutlines.mixins" ,
+	"required": true ,
+	"refmap": "mixins.blockhighlighter.refmap.json" ,
+	"target": "@env(DEFAULT)" ,
+	"minVersion": "0.8.5" ,
+	"compatibilityLevel": "JAVA_8" ,
+	"mixins": [] ,
+	"server": [] ,
+	"client": [
+		"RenderGlobalMixin"
+	]
+}

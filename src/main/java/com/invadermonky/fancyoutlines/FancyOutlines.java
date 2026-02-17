@@ -1,19 +1,19 @@
-package com.invadermonky.blockhighlighter;
+package com.invadermonky.fancyoutlines;
 
-import com.invadermonky.blockhighlighter.config.ConfigTags;
+import com.invadermonky.fancyoutlines.config.ConfigTags;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(
-        modid = BlockHighlighter.MOD_ID,
-        name = BlockHighlighter.MOD_NAME,
-        version = BlockHighlighter.MOD_VERSION,
-        dependencies = BlockHighlighter.DEPENDENCIES,
+        modid = FancyOutlines.MOD_ID,
+        name = FancyOutlines.MOD_NAME,
+        version = FancyOutlines.MOD_VERSION,
+        dependencies = FancyOutlines.DEPENDENCIES,
         clientSideOnly = true
 )
-public class BlockHighlighter {
+public class FancyOutlines {
     public static final String MOD_ID = Tags.MOD_ID;
     public static final String MOD_NAME = Tags.MOD_NAME;
     public static final String MOD_VERSION = Tags.VERSION;
