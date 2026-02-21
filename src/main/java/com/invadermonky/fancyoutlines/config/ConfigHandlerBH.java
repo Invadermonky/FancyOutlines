@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ConfigHandlerBH {
     @Config.RangeInt(min = 0x0, max = 0xffffff)
     @Config.Name("Global Highlight Color")
-    @Config.Comment("The global highlight RGB color override.")
+    @Config.Comment("The global highlight RGBA color override.")
     public static String globalColor = "#00000066";
 
     @Config.RangeInt(min = 0, max = 1000)
@@ -27,7 +27,7 @@ public class ConfigHandlerBH {
             "    blockid - the block id",
             "    meta - (optional) the block metadata",
             "    linewidth - the rendered line width, default MC value is 2",
-            "    color - the hex RGB color code",
+            "    color - the hex RGBA color code",
             "  Examples:",
             "    minecraft:stone=20;#ff000066",
             "    minecraft:stone:0=20;#ff000066"
