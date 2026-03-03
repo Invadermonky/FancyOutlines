@@ -16,7 +16,7 @@ public class HighlighterHolder {
     public final float blue;
     public final float alpha;
 
-    public HighlighterHolder(Block block, int meta, float size, String colorCode) {
+    public HighlighterHolder(Block block, int meta, float size, String colorCode) throws NumberFormatException, IndexOutOfBoundsException {
         this.block = block;
         this.meta = meta;
         this.size = size;
@@ -27,20 +27,20 @@ public class HighlighterHolder {
         this.alpha = (float) this.color.getAlpha() / 255;
     }
 
-    public HighlighterHolder(Block block, float size, String colorCode) {
+    public HighlighterHolder(Block block, float size, String colorCode) throws NumberFormatException, IndexOutOfBoundsException {
         this(block, 16, size, colorCode);
     }
 
-    public HighlighterHolder() {
+    public HighlighterHolder() throws NumberFormatException, IndexOutOfBoundsException {
         this(null, (float) ConfigHandlerBH.globalLineWidth, ConfigHandlerBH.globalColor);
     }
 
-    public static Color hex2Rgb(String colorStr) {
+    public static Color hex2Rgb(String colorStr) throws NumberFormatException, IndexOutOfBoundsException{
         return new Color(
                 Integer.valueOf( colorStr.substring( 1, 3 ), 16 ),
                 Integer.valueOf( colorStr.substring( 3, 5 ), 16 ),
                 Integer.valueOf( colorStr.substring( 5, 7 ), 16 ),
-                Integer.valueOf( colorStr.substring( 7, 9 ), 16)
+                Integer.valueOf( colorStr.substring( 7, 9 ), 16 )
         );
     }
 
