@@ -1,5 +1,8 @@
 # Changelog
+##
 ## 1.12.2-1.0.2
+### Added
+- Added no harvest outline
 ### Fixed
 - Fixed a few rare config parsing crashes
 

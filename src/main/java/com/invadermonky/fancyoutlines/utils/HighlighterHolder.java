@@ -31,8 +31,12 @@ public class HighlighterHolder {
         this(block, 16, size, colorCode);
     }
 
-    public HighlighterHolder() throws NumberFormatException, IndexOutOfBoundsException {
-        this(null, (float) ConfigHandlerBH.globalLineWidth, ConfigHandlerBH.globalColor);
+    public static HighlighterHolder getDefaultHolder() throws NumberFormatException, IndexOutOfBoundsException {
+        return new HighlighterHolder(null, (float) ConfigHandlerBH.globalLineWidth, ConfigHandlerBH.globalColor);
+    }
+
+    public static HighlighterHolder getNoHarvestHolder() throws NumberFormatException, IndexOutOfBoundsException {
+        return new HighlighterHolder(null, ConfigHandlerBH.noHarvestLineWidth, ConfigHandlerBH.noHarvestColor);
     }
 
     public static Color hex2Rgb(String colorStr) throws NumberFormatException, IndexOutOfBoundsException{

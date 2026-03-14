@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ConfigHandlerBH {
     @Config.RangeInt(min = 0x0, max = 0xffffff)
     @Config.Name("Global Highlight Color")
-    @Config.Comment("The global highlight RGBA color override.")
+    @Config.Comment("The global highlight RGBA color override. Format: #[red][green][blue][alpha] -> #00000000")
     public static String globalColor = "#00000066";
 
     @Config.RangeInt(min = 0, max = 1000)
@@ -33,6 +33,17 @@ public class ConfigHandlerBH {
             "    minecraft:stone:0=20;#ff000066"
     })
     public static String[] highlightOverrides = new String[] {};
+
+    @Config.Name("No Harvest")
+    public static boolean noHarvestEnable = false;
+
+    @Config.Name("No Harvest Color")
+    @Config.Comment("The highlight RGBA color override for blocks that cannot be harvested. Format: #[red][green][blue][alpha] -> #00000000")
+    public static String noHarvestColor = "#00000066";
+
+    @Config.Name("No Harvest Line Width")
+    @Config.Comment("The rendered highlight line width for blocks that cannot be harvested.")
+    public static int noHarvestLineWidth = 2;
 
     @Mod.EventBusSubscriber(modid = FancyOutlines.MOD_ID)
     public static class ConfigChangeListener {
