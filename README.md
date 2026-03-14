@@ -1,7 +1,7 @@
 # Fancy Outlines
 [![Requires MixinBooter](https://img.shields.io/badge/Requires-MixinBooter-3498db.svg?labelColor=34495e&style=for-the-badge)](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)
 
-It's a mod that lets you change the mouseover block highlight color, alpha, and line width on a global or per-block basis. 
+It's a mod that lets you change the mouseover block highlight color, alpha, and line width on a global or per-block basis. Also lets you define an outline for materials the player cannot harvest (disabled by default).
 
 That's it.
 
