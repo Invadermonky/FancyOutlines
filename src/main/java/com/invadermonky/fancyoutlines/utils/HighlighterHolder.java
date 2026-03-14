@@ -36,7 +36,7 @@ public class HighlighterHolder {
     }
 
     public static HighlighterHolder getNoHarvestHolder() throws NumberFormatException, IndexOutOfBoundsException {
-        return new HighlighterHolder(null, ConfigHandlerBH.noHarvestLineWidth, ConfigHandlerBH.noHarvestColor);
+        return new HighlighterHolder(null, ConfigHandlerBH.noHarvestCategory.noHarvestLineWidth, ConfigHandlerBH.noHarvestCategory.noHarvestColor);
     }
 
     public static Color hex2Rgb(String colorStr) throws NumberFormatException, IndexOutOfBoundsException{

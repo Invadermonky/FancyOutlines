@@ -1,5 +1,10 @@
 # Changelog
-##
+## 1.12.2-1.0.3
+### Added
+- Added block specific no-harvest highlights
+
+---
+
 ## 1.12.2-1.0.2
 ### Added
 - Added no harvest outline

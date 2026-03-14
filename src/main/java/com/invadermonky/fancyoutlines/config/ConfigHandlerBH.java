@@ -34,16 +34,38 @@ public class ConfigHandlerBH {
     })
     public static String[] highlightOverrides = new String[] {};
 
-    @Config.Name("No Harvest")
-    public static boolean noHarvestEnable = false;
+    @Config.Name("No Harvest Highlights")
+    public static NoHarvestCategory noHarvestCategory = new NoHarvestCategory();
 
-    @Config.Name("No Harvest Color")
-    @Config.Comment("The highlight RGBA color override for blocks that cannot be harvested. Format: #[red][green][blue][alpha] -> #00000000")
-    public static String noHarvestColor = "#00000066";
+    public static class NoHarvestCategory {
+        @Config.Name("Enable No Harvest Outlines")
+        @Config.Comment("Enables the no harvest outline overrides that appear when a player cannot harvest a highlighted block.")
+        public boolean enableNoHarvestOutlines = false;
 
-    @Config.Name("No Harvest Line Width")
-    @Config.Comment("The rendered highlight line width for blocks that cannot be harvested.")
-    public static int noHarvestLineWidth = 2;
+        @Config.Name("No Harvest Global Color")
+        @Config.Comment("The highlight RGBA color override for blocks that cannot be harvested. Format: #[red][green][blue][alpha] -> #00000000")
+        public String noHarvestColor = "#ff000066";
+
+        @Config.Name("No Harvest Global Line Width")
+        @Config.Comment("The rendered highlight line width for blocks that cannot be harvested.")
+        public int noHarvestLineWidth = 2;
+
+        @Config.Name("No Harvest Highlight Overrides")
+        @Config.Comment({
+                "Block specific highlight overrides when a player cannot harvest the highlighted block.",
+                "  Format: modid:blockid:[meta]=linewidth;color",
+                "    modid - the mod id",
+                "    blockid - the block id",
+                "    meta - (optional) the block metadata",
+                "    linewidth - the rendered line width, default MC value is 2",
+                "    color - the hex RGBA color code",
+                "  Examples:",
+                "    minecraft:stone=20;#ff000066",
+                "    minecraft:stone:0=20;#ff000066"
+        })
+        public String[] noHarvestHighlightOverrides = new String[] {};
+
+    }
 
     @Mod.EventBusSubscriber(modid = FancyOutlines.MOD_ID)
     public static class ConfigChangeListener {

@@ -21,12 +21,13 @@ import java.util.regex.Pattern;
 public class ConfigTags {
     private static HighlighterHolder GLOBAL_HIGHLIGHTER;
     private static HighlighterHolder NO_HARVEST_HIGHLIGHTER;
-    private static List<HighlighterHolder> BLOCK_HIGHLIGHTS = new ArrayList<>();
+    private static final List<HighlighterHolder> BLOCK_HIGHLIGHTS = new ArrayList<>();
+    private static final List<HighlighterHolder> NO_HARVEST_HIGHLIGHTS = new ArrayList<>();
 
     @Nullable
     public static HighlighterHolder getBlockHighlight(EntityPlayer player, IBlockState state, BlockPos pos) {
-        if(ConfigHandlerBH.noHarvestEnable && !canPlayerHarvest(player, state, pos)) {
-            return NO_HARVEST_HIGHLIGHTER;
+        if(ConfigHandlerBH.noHarvestCategory.enableNoHarvestOutlines && !canPlayerHarvest(player, state, pos)) {
+            return NO_HARVEST_HIGHLIGHTS.stream().filter(highlighter -> highlighter.matches(state)).findAny().orElse(NO_HARVEST_HIGHLIGHTER);
         }
         return BLOCK_HIGHLIGHTS.stream().filter(highlighter -> highlighter.matches(state)).findAny().orElse(GLOBAL_HIGHLIGHTER);
     }
@@ -39,9 +40,15 @@ public class ConfigTags {
         GLOBAL_HIGHLIGHTER = HighlighterHolder.getDefaultHolder();
         NO_HARVEST_HIGHLIGHTER = HighlighterHolder.getNoHarvestHolder();
         BLOCK_HIGHLIGHTS.clear();
+        NO_HARVEST_HIGHLIGHTS.clear();
 
+        parseHighlightOverrides(BLOCK_HIGHLIGHTS, ConfigHandlerBH.highlightOverrides);
+        parseHighlightOverrides(NO_HARVEST_HIGHLIGHTS, ConfigHandlerBH.noHarvestCategory.noHarvestHighlightOverrides);
+    }
+
+    private static void parseHighlightOverrides(List<HighlighterHolder> taglist, String[] configStrings) {
         Pattern pattern = Pattern.compile("^([^:]+:[^:\\s]+):?(\\d+)?=(\\d+);(#[0-9a-fA-F]+|\\d+)$");
-        for(String str : ConfigHandlerBH.highlightOverrides) {
+        for(String str : configStrings) {
             try {
                 Matcher matcher = pattern.matcher(str);
                 if (matcher.find()) {
@@ -54,7 +61,7 @@ public class ConfigTags {
                         }
                         double size = MathHelper.clamp(Integer.parseInt(matcher.group(3)), 0, 1000);
                         String color = matcher.group(4);
-                        BLOCK_HIGHLIGHTS.add(new HighlighterHolder(block, meta, (float) size, color));
+                        taglist.add(new HighlighterHolder(block, meta, (float) size, color));
                     } else {
                         throw new IllegalArgumentException("Unable to find registered block: " + loc);
                     }
